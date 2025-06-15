@@ -8,4 +8,4 @@
 require recipes-kernel/kselftest/kselftest.inc
 
 SRC_URI += "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${PV}.tar.xz"
-SRC_URI[sha256sum] = "44f1bb84fe512e7bafe0e6dc85d38ec1c6c8fcbe97ccb51d8c19930b799f0d64"
+SRC_URI[sha256sum] = "3458cd6a6c508e161dbc5406e72b99d5dbdf929faf704a67db9ba46d07514858"
