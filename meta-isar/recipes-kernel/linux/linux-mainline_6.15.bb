@@ -7,16 +7,14 @@
 
 require recipes-kernel/linux/linux-custom.inc
 
-ARCHIVE_VERSION = "${@ d.getVar('PV')[:-2] if d.getVar('PV').endswith('.0') else d.getVar('PV') }"
+require recipes-kernel/linux/linux-mainline-6.15.inc
+
 
 SRC_URI += " \
-    https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${ARCHIVE_VERSION}.tar.xz \
     file://x86_64_defconfig \
     file://ftpm-module.cfg \
     file://subdir/no-ubifs-fs.cfg \
     file://no-root-nfs.cfg;apply=no"
-
-SRC_URI[sha256sum] = "3458cd6a6c508e161dbc5406e72b99d5dbdf929faf704a67db9ba46d07514858"
 
 S = "${WORKDIR}/linux-${ARCHIVE_VERSION}"
 
